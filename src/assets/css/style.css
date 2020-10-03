@@ -524,6 +524,106 @@ font-family: 'Poppins', sans-serif;
   border-top: none;
   box-shadow: 0px 0px 23px #cccccc5e;
 }
+.model-header-tab{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    position: relative;
+}
+.modal-header-tab button.close{
+  position: absolute !important;
+  top: .5em;
+  right: 1em;
+}
+.model-tabs-body{
+  border-top: 0;
+  border-bottom: 0;
+}
+.model-tabs-footer{
+  border-top: 2px solid #ccc;
+}
+.dp-input-container input[type="text"] {
+  width: 100% !important;
+  display: block;
+  height: calc(1.5em + .75rem + 2px) !important;
+  padding: .375rem .75rem;
+  padding-left:40px;
+  position: relative;
+  font-size: 1rem;
+  font-weight: 400 !important;
+  line-height: 1.5;
+  color: #6e707e;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #d1d3e2;
+  border-radius: .35rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; 
+}
+.dp-input-container input[type="text"]:focus {
+  color: #6e707e;
+  background-color: #fff;
+  border-color: #bac8f3;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(78,115,223,.25);
+}
+.dp-input-container::before{
+  content: '';
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #e4e4e4;
+  background-image: url('../img/calendar-interface-symbol-tool.svg');
+  width: 30px;
+  z-index: 9;
+  border-radius: .35rem 0 0 .35rem;
+  position: absolute;
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.codeInput{
+  position: relative;
+}
+.codeInput input{
+  padding-left:40px;
+}
+.codeInput::before{
+  content: '';
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #e4e4e4;
+  background-image: url('../img/code.svg');
+  width: 30px;
+  z-index: 9;
+  border-radius: .35rem 0 0 .35rem;
+  position: absolute;
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-
-
+.buttonGroup, .buttonGroup button {
+  display: flex;
+}
+.buttonGroup button:not(:first-child) {
+ margin-left: .5em;
+}
+.buttonGroup button {
+  background: #00acc0;
+  border-radius: .35rem;
+  padding: .5em .6em;  
+  border: none;
+  color: #fff;
+  align-items: center;
+  font-size: .9em;
+}
+.buttonGroup button span.icon {
+  width: 1em ;
+  display: block;
+  margin-right: .3em;
+}
+.buttonGroup button span.icon  img{
+  width: 100%;
+}

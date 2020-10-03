@@ -1,0 +1,8 @@
+<ng-container>
+    <ul class="tabGroup">
+        <li *ngFor = "let item of tabs.list" [ngClass] = "{'active':item.index === tabs.tabActive}" (click) = "getTabIndex(item)">
+            {{item.name}}
+        </li>
+    </ul>
+</ng-container>
+ 

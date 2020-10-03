@@ -1,0 +1,22 @@
+.tabGroup{
+    list-style: none;
+    padding: 0;
+    border-bottom: 2px solid #ccc;
+    margin: 0;
+    display: flex;
+}
+.tabGroup li{
+    padding-bottom: .3em;
+    border-bottom: 2px solid transparent;
+    transition: .5s ease;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+}
+.tabGroup li:not(:first-child){
+    margin-left: 1em;
+}
+.tabGroup li.active{
+    color: #00acc0;
+    border-bottom: 2px solid #00acc0;
+}
