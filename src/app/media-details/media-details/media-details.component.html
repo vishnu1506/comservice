@@ -1,41 +1,36 @@
-<div id="costumModal-001" class="modal" data-easein="slideRightIn" tabindex="-1" role="dialog"
-    aria-labelledby="costumModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content py-3 px-4">
-            <div class="modal-header-tab mt-3">
-                <app-tabgroup-main [tabs]="tabList" (tabOnChange)="getTabIndexMain($event)"></app-tabgroup-main>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    ×
-                </button>
-            </div>
-            <div class="modal-body model-tabs-body px-0">
-                <div class="tabContent">
-                    <div [ngStyle] = "{'display': tabIndexMain === 0 ? 'block':'none'}">
-                        <app-media-detail ></app-media-detail>
-                    </div>
-                    <div [ngStyle] = "{'display': tabIndexMain === 1 ? 'block':'none'}">
-                        <app-classification ></app-classification>
-                    </div>
-                    <div [ngStyle] = "{'display': tabIndexMain === 2 ? 'block':'none'}">
-                        <app-media-encoder></app-media-encoder>
-                    </div>                    
-                </div>
-
-            </div>
-            <div class="buttonGroup my-2" *ngIf="tabIndexMain === 0 || tabIndexMain ===1">
-                <button><span class="icon"><img src="assets/img/video-player.svg" alt=""></span> Upload Source
-                    Media</button>
-                <button><span class="icon"><img src="assets/img/like.svg" alt=""></span>Approve Media</button>
-                <button><span class="icon"><img src="assets/img/dislike.svg" alt=""></span>Reject Media</button>
-                <button><span class="icon"><img src="assets/img/wi-fi.svg" alt=""></span>Purge Media</button>
-                <button><span class="icon"><img src="assets/img/diskette.svg" alt=""></span>Save Media</button>
-                <button><span class="icon"><img src="assets/img/trash.svg" alt=""></span>Cancel</button>
-            </div>
-            <div class="modal-footer model-tabs-footer p-0">
-                <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
+<div mat-dialog-title class="position-relative">
+    <button class="popupClose close" [mat-dialog-close]="true">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">close</mat-icon>
+    </button>
 </div>
+<mat-dialog-content>
+    <mat-tab-group>
+        <mat-tab label="Media">
+            <app-media-video></app-media-video>
+        </mat-tab>
+        <mat-tab label="Media Details">
+            <div class="d-flex h-100 flex-column justify-content-between">
+                
+                    <app-media-detail></app-media-detail>
+            
+            </div>
+        </mat-tab>
+        <mat-tab label="Classification">
+            <div class="d-flex h-100 flex-column justify-content-between">
+                <app-classification></app-classification>
+            </div>
+        </mat-tab>
+        <mat-tab label="Media Encoder">
+            <app-media-encoder></app-media-encoder>
+        </mat-tab>
+    </mat-tab-group>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div class="col-12">
+        <app-media-buttons></app-media-buttons>
+    </div>
+    <div class="col-12 text-right">
+        <button class="btn btn-danger"  mat-button [mat-dialog-close]="true">Close</button>
+    </div>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+</mat-dialog-actions>

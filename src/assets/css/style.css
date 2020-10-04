@@ -373,7 +373,7 @@ background: #00aeef;
   display: inline-block;
 }
 
-.search-filter ul li select{
+/* .search-filter ul li select{
   color: #00aeef;
  border: none;
     min-width: 83px;
@@ -389,10 +389,26 @@ background: #00aeef;
     width: 120px;
     padding-left: 10px;
     margin-left: 5px;
-  }
+  } */
 
-
-
+.search-filter ul li select,.search-filter ul li input{
+  color: #00aeef;
+  margin-left: 0.3em;
+  /* height: calc(1.5em + .75rem + 2px) !important; */
+  padding: .175rem .75rem;
+  position: relative;
+  font-size: 1rem;
+  font-weight: 400 !important;
+  line-height: 1.5;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #d1d3e2;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;   
+}
+.search-filter ul li input{
+  padding: .125rem .75rem;
+}
 select:focus{
   outline: none;
 }
@@ -531,10 +547,10 @@ font-family: 'Poppins', sans-serif;
     padding: 1rem 1rem;
     position: relative;
 }
-.modal-header-tab button.close{
+.popupClose{
   position: absolute !important;
-  top: .5em;
-  right: 1em;
+  top: -1em;
+  right: .5em;
 }
 .model-tabs-body{
   border-top: 0;
@@ -626,4 +642,7 @@ font-family: 'Poppins', sans-serif;
 }
 .buttonGroup button span.icon  img{
   width: 100%;
+}
+.mediaPopup .mat-dialog-content{
+  height: calc(100% - 100px);
 }

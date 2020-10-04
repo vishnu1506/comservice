@@ -6,6 +6,10 @@
   <div class="search-filter">
     <ul>
       <li>
+        <!-- <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Search</mat-label>
+        <input type="text" matInput>
+      </mat-form-field>         -->
         <label for="cars">Search</label>
         <input type="text" placeholder="Search..">
       </li>
@@ -110,8 +114,7 @@
                               <video class="embed-responsive-item" id="vid" src="assets/video/0 Real Estate Promo.mp4"
                                 controls loop autoplay muted></video>
                             </div>
-                            <a href="#costumModal-001" role="button" class="btn btn-default expand-btn"
-                              data-toggle="modal">
+                            <a  role="button" class="btn btn-default expand-btn" (click) = "openDialog()">
                               <i class="fas fa-expand"></i>
                             </a>
                           </div>
@@ -168,6 +171,6 @@
 </div>
 <!-- /.container-fluid -->
 
-<app-media-details></app-media-details>
+
 
 <router-outlet></router-outlet>

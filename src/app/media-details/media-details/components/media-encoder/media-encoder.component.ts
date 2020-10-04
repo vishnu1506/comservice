@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TabGroupConfig } from 'src/app/core/core/interfaces/interface';
 
 @Component({
@@ -6,7 +6,7 @@ import { TabGroupConfig } from 'src/app/core/core/interfaces/interface';
   templateUrl: './media-encoder.component.html',
   styleUrls: ['./media-encoder.component.css']
 })
-export class MediaEncoderComponent implements OnInit {
+export class MediaEncoderComponent implements OnInit, AfterViewInit {
   tabIndexMain = 0;
   list = [];
   tabList: TabGroupConfig = {
@@ -34,9 +34,31 @@ export class MediaEncoderComponent implements OnInit {
     }],
     tabActive: this.tabIndexMain
   };
-  constructor() { this.list.length = 50;}
+  displayedColumns: string[] = ['Logged', 'User Name', 'From Status', 'To Status', 'Qced', 'Resolution'];
+  dataSource = [];
+  constructor() { this.list.length = 50; }
+  @ViewChild('table') tableHeight: ElementRef;
 
   ngOnInit(): void {
+    for (let index = 0; index < 20; index++) {
+      const obj = {
+        logged: new Date(),
+        name: 'NBEN2323',
+        from: 'NBC',
+        to: 'Broklyn 99 Another Day',
+        qced: '',
+        resolution: 'HD8'
+      };
+
+      this.dataSource.push(obj);
+    }
+  }
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      const contentAreaHeight = document.querySelector('.mat-dialog-content').scrollHeight;
+      this.tableHeight.nativeElement.style = `height:${contentAreaHeight - 150}px;overflow:auto`;
+      console.log(this.tableHeight)
+    });
   }
   getTabIndexMain(index: number): void {
     this.tabIndexMain = index;

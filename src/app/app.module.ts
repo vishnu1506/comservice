@@ -11,7 +11,17 @@ import { SharedModule } from './shared/shared/shared.module';
 import { ClassificationComponent } from './media-details/media-details/components/classification/classification.component';
 import { MediaEncoderComponent } from './media-details/media-details/components/media-encoder/media-encoder.component';
 import { MediaDetailComponent } from './media-details/media-details/components/media-detail/media-detail.component';
-import {DpDatePickerModule} from 'ng2-date-picker';
+import { DpDatePickerModule } from 'ng2-date-picker';
+import { MediaVideoComponent } from './media-details/media-details/components/media-video/media-video.component';
+import { MediaButtonsComponent } from './media-details/media-details/components/media-buttons/media-buttons.component';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -20,7 +30,9 @@ import {DpDatePickerModule} from 'ng2-date-picker';
     MediaDetailsComponent,
     ClassificationComponent,
     MediaEncoderComponent,
-    MediaDetailComponent
+    MediaDetailComponent,
+    MediaVideoComponent,
+    MediaButtonsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,9 +41,19 @@ import {DpDatePickerModule} from 'ng2-date-picker';
     BrowserAnimationsModule,
     MatTabsModule,
     SharedModule,
-    DpDatePickerModule
+    DpDatePickerModule,
+    MatDialogModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  entryComponents: [MediaDetailsComponent],
+  providers: [{ provide: MatDialogRef, useValue: {} },
+  { provide: MAT_DIALOG_DATA, useValue: [] }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
