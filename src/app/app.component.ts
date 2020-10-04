@@ -36,7 +36,7 @@ export class AppComponent {
   ];
   displayedColumns: string[] = ['video', 'position', 'office', 'age', 'startDate', 'salary'];
   openDialog(): void {
-    const dialogRef = this.dialog.open(MediaDetailsComponent, { width: '80%', height: '80%',panelClass:'mediaPopup' });
+    const dialogRef = this.dialog.open(MediaDetailsComponent, { width: '80%', height: '100%',panelClass:'mediaPopup',position:{right:'0px'} });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

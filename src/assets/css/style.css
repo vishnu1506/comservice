@@ -200,8 +200,8 @@ height: 100%;
       position: relative;
     float: right;
     margin-top: -108px;
-    background: #00000099;
-    color: #fff;
+    background: #00000066;
+    color: #fff !important;
     right: 10px;
     }
       .popover__content:before {
@@ -364,7 +364,7 @@ height: 100%;
 
 .search-filter ul{
 background: #00aeef;
-    padding: 10px 0px 2px 0px;
+    padding: 10px 0px 5px 0px;
     border-radius: 3px;
     margin: 0px;
 }
@@ -644,5 +644,6 @@ font-family: 'Poppins', sans-serif;
   width: 100%;
 }
 .mediaPopup .mat-dialog-content{
-  height: calc(100% - 100px);
+  /* height: calc(100% - 100px); */
+  min-height: 75vh;
 }
