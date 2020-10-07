@@ -15,7 +15,7 @@ export class MediaVideoComponent implements OnInit,AfterViewInit {
   ngAfterViewInit(): void {
     setTimeout(() => {
       const contentAreaHeight = document.querySelector('.mat-dialog-content').scrollHeight;
-      this.videoWrap.nativeElement.style = `height:${contentAreaHeight - 50}px;overflow:auto`;
+      // this.videoWrap.nativeElement.style = `height:${contentAreaHeight - 50}px;overflow:auto`;
       console.log(this.videoWrap)
     });
   }

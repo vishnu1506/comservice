@@ -1,0 +1,8 @@
+.tab-icon {
+    width: 2em;
+}
+
+::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active {
+    min-width: 140px!important;
+}
+

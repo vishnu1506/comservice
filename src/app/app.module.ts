@@ -15,13 +15,15 @@ import { DpDatePickerModule } from 'ng2-date-picker';
 import { MediaVideoComponent } from './media-details/media-details/components/media-video/media-video.component';
 import { MediaButtonsComponent } from './media-details/media-details/components/media-buttons/media-buttons.component';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import {MatIconModule} from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCheckboxModule,
+    MatTooltipModule
   ],
   entryComponents: [MediaDetailsComponent],
   providers: [{ provide: MatDialogRef, useValue: {} },
